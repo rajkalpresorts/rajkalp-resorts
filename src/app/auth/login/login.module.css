@@ -1,0 +1,218 @@
+.loginbg {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  /* aspect-ratio: 5/1; */
+}
+.container {
+  position: absolute;
+  top: 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5% 0% 5% 0%;
+}
+.col1 {
+  width: 55%;
+  display: flex;
+  gap: 1.8vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 10%;
+}
+.col1c {
+  width: 55%;
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 10%;
+}
+.col2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8vw;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 10%;
+}
+.logo {
+  width: 60%;
+  height: auto;
+}
+.head1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5vw;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.input {
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  width: 70%;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+  border-radius: 15px;
+}
+.submitBtn {
+  background-color: #8bbb91;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0.4vw;
+  width: 50%;
+  font-size: 1.1vw;
+  cursor: pointer;
+}
+.submitBtn2 {
+  background-color: #8bbb91;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0.4vw;
+  width: 50%;
+  font-size: 1.1vw;
+  cursor: pointer;
+}
+.head2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.2vw;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+.head3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.head4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vw;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  width: 50%;
+}
+.link2 {
+  text-decoration: none;
+  color: black;
+  width: 50%;
+}
+.signup {
+  background-color: #8bbb91;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0.4vw;
+  width: 100%;
+  font-size: 1.1vw;
+  cursor: pointer;
+}
+
+.inputRow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.inputcol1 {
+  width: 49%;
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+  border-radius: 15px;
+  margin-right: 2%;
+}
+.inputcol2 {
+  width: 49%;
+  float: right;
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+  border-radius: 15px;
+}
+.input2 {
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  width: 80%;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+  border-radius: 15px;
+}
+.input3 {
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  width: 80%;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 3vw;
+  border-radius: 15px;
+}
+.phone {
+  margin: 17.2% 0 0 9.5%;
+  position: absolute;
+  left: 5rem;
+  /* top: 10%; */
+}
+.nextBtn {
+  background-color: #8bbb91;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0.4vw;
+  width: 100%;
+  font-size: 1.1vw;
+  cursor: pointer;
+}
+.ref {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  font-size: 1.2vw;
+  color: grey;
+}
+.radio {
+  margin: 0 5px 0 0;
+  height: 1vw;
+  width: 1vw;
+}
+.input5 {
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  width: 80%;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+  border-radius: 15px;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 40vw;
+}
+.btnWrapper button {
+  display: flex;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  gap: 5px;
+}
+.btnWrapper button:hover {
+  background-color: #45a049;
+}
