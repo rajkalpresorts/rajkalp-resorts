@@ -1,0 +1,41 @@
+.container {
+  font-family: "Times New Roman", Times, serif;
+  margin: 10% 15% 5% 15%;
+}
+.head {
+  font-size: 2vw;
+  text-align: center;
+  font-weight: 600;
+}
+.para {
+  font-size: 1vw;
+  text-align: left;
+  margin: 1% 0 4% 0;
+}
+.head2 {
+  font-size: 1.2vw;
+  font-weight: 600;
+  text-align: left;
+}
+
+@media screen and (max-width: 464px) {
+  .container {
+    font-family: "Times New Roman", Times, serif;
+    margin: 5% 5% 5% 5%;
+  }
+  .head {
+    font-size: 4.5vw;
+    text-align: center;
+    font-weight: 600;
+  }
+  .para {
+    font-size: 3vw;
+    text-align: left;
+    margin: 1% 0 4% 0;
+  }
+  .head2 {
+    font-size: 3vw;
+    font-weight: 600;
+    text-align: left;
+  }
+}

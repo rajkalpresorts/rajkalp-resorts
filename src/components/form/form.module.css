@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3vw;
+  padding: 1.2vw 1.8vw;
+  width: 26vw;
+  background-color: #d9d9d9;
+}
+
+.head {
+  font-size: 1.2vw;
+  color: #000;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.param {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1vw;
+}
+
+.label {
+  color: #383838;
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.input {
+  display: block;
+  font-size: 1vw;
+  height: 2.2vw;
+  padding-left: 0.6vw;
+  border: none;
+  outline: none;
+}
+
+.inputMob {
+  display: none;
+}
+
+.message {
+  display: block;
+  font-size: 1vw;
+  height: 5vw;
+  padding: 0.6vw;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.messageMob {
+  display: none;
+}
+
+.btn {
+  margin-top: 0.5vw;
+  height: 2.2vw;
+  background-color: #315471;
+  font-size: 1vw;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
+.btnDisabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
+
+@media screen and (max-width: 464px) {
+  .container {
+    gap: 2vw;
+    padding: 3vw 7vw 5vw 7vw;
+    width: 90%;
+  }
+
+  .head {
+    font-size: 6vw;
+    color: #000;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .input {
+    display: none;
+  }
+
+  .inputMob {
+    display: block;
+    font-size: 3.5vw;
+    height: 7vw;
+    padding-left: 1.5vw;
+    border: none;
+    outline: none;
+  }
+
+  .message {
+    display: none;
+  }
+
+  .messageMob {
+    display: block;
+    font-size: 3.5vw;
+    height: 15vw;
+    padding: 1.5vw;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  .btn {
+    margin-top: 1vw;
+    height: 7vw;
+    font-size: 3.5vw;
+  }
+}

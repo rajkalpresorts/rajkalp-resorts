@@ -1,0 +1,18 @@
+.shopBtn {
+  font-size: 1.3vw;
+  background-color: #315471;
+  padding: 5px 15px 5px 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 464px) {
+  .shopBtn {
+    font-size: 5vw;
+    background-color: #315471;
+    padding: 5px 15px 5px 15px;
+    color: white;
+  }
+}

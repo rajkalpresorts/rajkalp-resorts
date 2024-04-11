@@ -1,0 +1,158 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  padding: 2vw 0 0 0;
+}
+
+.head {
+  color: #000;
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vw;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+}
+
+.param {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vw;
+}
+
+.label {
+  font-size: 1.2vw;
+  color: #383838;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.input {
+  width: 40vw;
+  height: 2.6vw;
+  border-radius: 0.6vw;
+  border: 1px solid #000;
+  outline: none;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 500;
+  padding-left: 0.8vw;
+}
+
+.param2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vw;
+  align-self: center;
+}
+
+.message {
+  width: 85vw;
+  height: 5vw;
+  border-radius: 0.6vw;
+  border: 1px solid #000;
+  outline: none;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0.8vw;
+  resize: none;
+}
+
+.btn {
+  margin-top: 1vw;
+  width: 18vw;
+  height: 2.5vw;
+  align-self: center;
+  border-radius: 1vw;
+  background-color: #315471;
+  border: none;
+  color: #fff;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btnDisabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
+
+@media screen and (max-width: 464px) {
+  .container {
+    gap: 3vw;
+    padding: 2vw 0 2vw 0;
+  }
+
+  .head {
+    font-size: 6vw;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .param {
+    gap: 0.6vw;
+  }
+
+  .label {
+    font-size: 4vw;
+    color: #383838;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .input {
+    width: 85vw;
+    height: 9vw;
+    border-radius: 1.2vw;
+    font-size: 4vw;
+    padding-left: 1.6vw;
+  }
+
+  .param2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
+    align-self: center;
+  }
+
+  .message {
+    width: 85vw;
+    height: 20vw;
+    border-radius: 1.2vw;
+    font-size: 4vw;
+    padding: 1.6vw;
+  }
+
+  .btn {
+    margin-top: 1vw;
+    width: 85vw;
+    height: 9vw;
+    border-radius: 2vw;
+    font-size: 4vw;
+  }
+}

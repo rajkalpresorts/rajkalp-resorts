@@ -1,0 +1,177 @@
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3vw 10vw 3vw 10vw;
+  background-image: url("./../../../public/assets/footbg.png");
+}
+.col1 {
+  width: 32%;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid white;
+}
+.col2 {
+  width: 32%;
+  padding: 0 0 0 2vw;
+  border-right: 2px solid white;
+}
+.col3 {
+  width: 32%;
+}
+.footHead {
+  font-size: 1.8vw;
+  color: white;
+  text-align: center;
+  width: 70%;
+  margin: 0 0 2vw 0;
+}
+.footHead2 {
+  font-size: 1.8vw;
+  color: white;
+  text-align: center;
+  width: 70%;
+  margin: 0 0 1vw 0;
+}
+.footlogo {
+  width: 50%;
+  height: auto;
+  margin: 0;
+}
+.hlink,
+.hlink:hover,
+.hlink:focus,
+.hlink:active {
+  text-decoration: none;
+  color: inherit;
+}
+.policy {
+  font-size: 1.2vw;
+  text-align: left;
+  color: white;
+  padding: 2% 0 0 0;
+  font-family: "Times New Roman", Times, serif;
+}
+.cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.5vw 0 0 0;
+}
+.conta {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contb {
+  width: 80%;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4vw;
+  text-align: left;
+  padding: 1% 0 0 0;
+}
+.footic {
+  width: 40px;
+  height: auto;
+  margin: 0;
+}
+.name {
+  background-color: white;
+  color: rgb(53, 53, 53);
+  font-size: 1vw;
+  padding: 3px 3px 2px 5px;
+  border-radius: 6px;
+  width: 90%;
+  margin: 0.5vw 0 0 2vw;
+  border: none;
+}
+.sendBtn {
+  background-color: #8bbb91;
+  color: rgb(49, 49, 49);
+  font-size: 1vw;
+  padding: 3px 3px 2px 5px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0.5vw 0 0 2vw;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 464px) {
+  .container {
+    width: 100%;
+    height: 160vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8vw 5vw 5vw 5vw;
+    background-image: url("./../../../public/assets/mfootbg.png");
+  }
+  .col1 {
+    width: 100%;
+    display: static;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  .col2 {
+    width: 100%;
+    border: none;
+  }
+  .col3 {
+    width: 100%;
+  }
+  .footHead {
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    margin: 0 0 6vw 12vw;
+  }
+  .footHead2 {
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    margin: 0 0 5vw 12vw;
+  }
+  .footlogo {
+    width: 60%;
+    margin: 0 0 0 18vw;
+  }
+  .policy {
+    font-size: 4vw;
+    text-align: center;
+    color: rgb(192, 192, 192);
+    padding: 2% 0 0 0;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .contb {
+    font-size: 5vw;
+    text-align: left;
+  }
+  .footic {
+    width: 30px;
+    height: auto;
+    margin: 0;
+  }
+  .name {
+    background-color: white;
+    color: rgb(53, 53, 53);
+    font-size: 3vw;
+    padding: 6px 5px 6px 8px;
+    border-radius: 6px;
+    width: 90%;
+    margin: 1.5vw 0 0 4vw;
+    border: none;
+  }
+  .sendBtn {
+    background-color: #8bbb91;
+    color: rgb(49, 49, 49);
+    font-size: 3vw;
+    padding: 6px 5px 6px 8px;
+    border-radius: 10px;
+    width: 90%;
+    margin: 1.5vw 0 0 4vw;
+    border: none;
+    cursor: pointer;
+  }
+}

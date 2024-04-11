@@ -1,0 +1,79 @@
+.container {
+  padding: 4% 12%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  height: 110vh;
+}
+.inputRow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.label1 {
+  width: 49%;
+  float: right;
+  background-color: white;
+  color: gray;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+}
+.inputcol2 {
+  width: 49%;
+  float: right;
+  background-color: white;
+  border: 1px solid grey;
+  color: gray;
+  font-size: 1vw;
+  padding: 0.5vw 0.5vw 0.5vw 0.8vw;
+  border-radius: 8px;
+}
+.ribbon {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  width: 15vw;
+  height: 80vh;
+  justify-content: center;
+  border-right: 2px solid rgb(179, 179, 179);
+}
+.ribs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ribbonBtn {
+  font-size: 1.3vw;
+  color: rgb(148, 148, 148);
+  text-align: center;
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.butActive {
+  font-size: 1.3vw;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.contain {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.part2 {
+  width: 75vw;
+  padding: 2vw 15vw 2vw 12vw;
+}

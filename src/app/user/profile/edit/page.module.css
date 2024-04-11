@@ -1,0 +1,59 @@
+.container {
+  width: 100%;
+}
+.inputRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.col1 {
+  width: 48%;
+  margin: 0 1.5% 0 0;
+}
+.col2 {
+  width: 48%;
+  margin: 0 0% 0 2%;
+}
+.label1 {
+  font-size: 1.2vw;
+  text-align: left;
+  width: 100%;
+}
+.input1 {
+  border: 1px solid rgb(105, 105, 105);
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1vw;
+  padding: 0.3vw;
+  margin: 0.2vw 0 1vw 0;
+}
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
+.input2 {
+  border: 1px solid rgb(105, 105, 105);
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1vw;
+  padding: 0.3vw;
+  margin: 0.2vw 0 1vw 0;
+}
+.cancelBtn {
+  font-size: 1.2vw;
+  background-color: white;
+  border: 1px solid #8bbb91;
+  border-radius: 10px;
+  padding: 0.5vw 1vw;
+  width: 50%;
+}
+.saveBtn {
+  font-size: 1.2vw;
+  color: white;
+  background-color: #8bbb91;
+  border: 1px solid #8bbb91;
+  border-radius: 10px;
+  padding: 0.5vw 1vw;
+  width: 50%;
+  float: right;
+}

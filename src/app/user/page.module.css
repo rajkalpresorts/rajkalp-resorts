@@ -1,0 +1,128 @@
+.nav {
+  width: 100vw;
+  height: 8rem;
+  padding: 5px 10% 5px 10%;
+  background-color: #d4ead7;
+}
+.logo {
+  width: auto;
+  height: 95%;
+  margin: 0.25rem 0 0.75rem 0%;
+}
+.ribbon {
+  background-color: #8bbb91;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  gap: auto;
+  justify-content: center;
+}
+.ribs {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ribbonBtn {
+  font-size: 1.3vw;
+  color: black;
+  text-align: center;
+  width: 100%;
+  background-color: #8bbb91;
+  border: none;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.butActive {
+  font-size: 1.3vw;
+  color: white;
+  text-align: center;
+  width: 100%;
+  background-color: #214c28;
+  border: none;
+  padding: 8px 10px;
+}
+.col1 {
+  display: flex;
+  width: 80%;
+  float: left;
+}
+.col2 {
+  display: flex;
+  width: 20%;
+  float: right;
+}
+.formBtn {
+  border: none;
+  background-color: #74bcff;
+  color: rgb(2, 2, 2);
+  outline: none;
+  padding: 3px 10px 2px 10px;
+  margin: 2px 0.5rem 2px 0.5rem;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.newsBtn {
+  border: none;
+  background-color: #74bcff;
+  color: black;
+  outline: none;
+  padding: 3px 10px 2px 10px;
+  margin: 2px 0.5rem 2px 0.5rem;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.refreshBtn {
+  border: none;
+  background-color: #74bcff;
+  color: black;
+  outline: none;
+  padding: 3px 10px 2px 10px;
+  margin: 2px 0.5rem 2px 0.5rem;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.signoutBtn {
+  border: none;
+  background-color: #74bcff;
+  color: black;
+  outline: none;
+  padding: 3px 10px 2px 10px;
+  margin: 2px 0.5rem 2px 0.5rem;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.query {
+  margin-left: 2.5rem;
+  padding: 6px 10px 2px 10px;
+}
+.welcomePara {
+  text-align: left;
+  font-weight: 400;
+}
+.welcomeDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 15% 5% 15%;
+  width: 100%;
+}
+.signout {
+  color: white;
+  background-color: #214c28;
+  padding: 10px 25px;
+  float: right;
+  border: none;
+  font-size: 1vw;
+  border-radius: 15px;
+  margin: 3% 0 0 0;
+}
