@@ -7,7 +7,7 @@ export async function POST(req) {
     try {
         await connectDB();
 
-        const token = req.cookies.get('token')?.value || '';
+        const token = req.cookies.get('token')?.value || null;
 
         if (!token) {
             return NextResponse.json({

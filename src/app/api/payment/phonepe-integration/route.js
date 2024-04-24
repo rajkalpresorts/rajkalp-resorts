@@ -21,7 +21,6 @@ const generatePhonePePayload = (userId, amount, mobileNumber) => {
     };
 
     const base64Payload = Buffer.from(JSON.stringify(payload)).toString("base64");
-
     const saltedPayload = `${base64Payload}/pg/v1/pay${process.env.SALT_KEY}`;
 
     const xVerify = crypto
@@ -38,7 +37,24 @@ export async function POST(req) {
     try {
         await connectDB();
 
-        const { userId, amount, plan } = await req.json();
+        const token = req.cookies.get('token')?.value || null;
+
+        if (!token) {
+            return NextResponse.json({
+                error: "No access token!"
+            }, { status: 300 });
+        }
+
+        const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+
+        if (decoded.role !== 'admin' && decoded.role !== 'user') {
+            return NextResponse.json({
+                error: "Unauthorized access!"
+            }, { status: 401 });
+        }
+
+        const userId = decoded.id;
+        const { amount, plan } = await req.json();
 
         const user = await User.findById(userId);
 
@@ -95,5 +111,4 @@ export async function POST(req) {
             error: error
         }, { status: 500 });
     }
-
 }
