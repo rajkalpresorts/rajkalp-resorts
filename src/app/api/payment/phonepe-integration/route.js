@@ -3,6 +3,7 @@ import User from "@/database/models/user";
 import { NextResponse } from "next/server";
 import axios from "axios";
 import crypto from "crypto";
+import Order from "@/database/models/order";
 
 const generatePhonePePayload = (userId, amount, mobileNumber) => {
     const payload = {
@@ -47,6 +48,13 @@ export async function POST(req) {
             }, { status: 404 });
         }
 
+        const newOrder = new Order({
+            user: userId,
+            plan: plan,
+        });
+
+        await newOrder.save();
+
         const phonePePayload = generatePhonePePayload(userId, amount, user.contact);
 
         const response = await axios.post(
@@ -66,12 +74,15 @@ export async function POST(req) {
             }
         );
 
-        console.log(response);
-
         if (response?.data?.success && response?.data?.data?.instrumentResponse) {
             const redirectUrl = response?.data?.data?.instrumentResponse?.redirectInfo?.url;
             const phonePeRes = response?.data;
 
+            newOrder.paymentStatus = phonePeRes?.code;
+            newOrder.merchantId = phonePeRes?.data?.merchantId;
+            newOrder.transactionId = phonePeRes?.data?.merchantTransactionId;
+
+            await newOrder.save();
             return NextResponse.json({ redirectUrl });
         } else {
             return NextResponse.json({
