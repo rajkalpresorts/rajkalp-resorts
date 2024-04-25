@@ -1,7 +1,18 @@
 .container {
-  padding: 4% 12%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5vw;
-  height: 100vh;
+	padding: 20px 40px;
+	text-align: center;
+}
+
+.foreignObjectStyle {
+	border: 1px solid black;
+	border-top: 2px solid #2f80ed;
+	border-radius: 5px;
+	z-index: 1000;
+	padding: 10px 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: white;
+	width: 150px;
+	height: 100px;
 }
