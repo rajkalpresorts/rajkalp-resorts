@@ -1,5 +1,7 @@
 import connectDB from "@/database/dbConfig";
 import User from "@/database/models/user";
+import { NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
 
 export async function GET(req) {
     try {
