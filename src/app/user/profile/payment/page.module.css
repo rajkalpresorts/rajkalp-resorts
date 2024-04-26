@@ -1,0 +1,11 @@
+.container {
+	width: 100%;
+}
+.formWrapper {
+	display: flex;
+	flex-direction: column;
+}
+.formGroup {
+	display: flex;
+	flex-direction: column;
+}

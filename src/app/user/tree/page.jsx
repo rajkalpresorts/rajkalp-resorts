@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Tree from "react-d3-tree";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const myTreeData = [
 	{
@@ -80,9 +82,15 @@ const renderForeignObjectNode = ({
 	<g>
 		<foreignObject {...foreignObjectProps}>
 			<div className={styles.foreignObjectStyle} onClick={toggleNode}>
-				<div>{nodeDatum.name}</div>
-				{nodeDatum.attributes?.department && (
-					<div>Department: {nodeDatum.attributes?.department}</div>
+				<div
+					style={{
+						fontWeight: "bold",
+					}}
+				>
+					{nodeDatum.name}
+				</div>
+				{nodeDatum.attributes?.email && (
+					<div>Email: {nodeDatum.attributes?.email}</div>
 				)}
 			</div>
 		</foreignObject>
@@ -91,12 +99,34 @@ const renderForeignObjectNode = ({
 
 function Page() {
 	const foreignObjectProps = { width: 150, height: 100, x: -75, y: -50 };
+	const [treeData, setTreeData] = useState(myTreeData);
+	const user = useSelector((data) => data.user.user);
+
+	const gatherData = async () => {
+		try {
+			const res = await axios.post("/api/tree", {
+				userId: user.id,
+			});
+			setTreeData(res.data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	useEffect(() => {
+		const gatherDataWrapper = async () => {
+			await gatherData();
+		};
+
+		gatherDataWrapper();
+	}, []);
+
 	return (
 		<div className={styles.container}>
 			<h1>ORG Chart POC</h1>
 			<div id="treeWrapper" style={{ width: "100%", height: "100vh" }}>
 				<Tree
-					data={myTreeData}
+					data={treeData}
 					pathFunc="step"
 					separation={{ siblings: 2, nonSiblings: 2 }}
 					orientation="vertical"
@@ -110,7 +140,7 @@ function Page() {
 					}
 					zoomable={true}
 					draggable={true}
-					initialDepth={1}
+					initialDepth={3}
 				/>
 			</div>
 		</div>
