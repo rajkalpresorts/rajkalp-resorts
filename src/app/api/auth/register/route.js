@@ -99,6 +99,7 @@ export async function PUT(req) {
             if (referredBy) {
                 user.referredBy = referredBy._id;
                 referredBy.referrals.push(user._id);
+                referredBy.markModified('referrals');
                 await referredBy.save();
             }
 
