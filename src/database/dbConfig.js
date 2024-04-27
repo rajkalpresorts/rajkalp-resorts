@@ -1,4 +1,9 @@
 import mongoose from "mongoose";
+import User from "./models/user.js";
+import Plan from "./models/plan.js";
+import Order from "./models/order.js";
+import Form from "./models/form.js";
+import Mail from "./models/mail.js";
 
 const connectDB = async () => {
     if (mongoose.connection.readyState >= 1) return;

@@ -10,6 +10,8 @@ export async function POST(req) {
 
         const paymentInfo = await req.formData();
 
+        console.log(paymentInfo)
+
         const paymentStatus = paymentInfo.get("code");
         const phonepeAmount = paymentInfo.get("amount");
         const providerRefID = paymentInfo.get("providerReferenceId");
@@ -40,7 +42,7 @@ export async function POST(req) {
         oldOrder.providerRefID = providerRefID;
         oldOrder.paymentTime = paymentTime;
         oldOrder.confirmationId = confirmationId;
-        oldOrder.checkSum = checksum;
+        oldOrder.checksum = checksum;
 
         await oldOrder.save();
         const code = paymentStatus;
@@ -48,7 +50,7 @@ export async function POST(req) {
         switch (code) {
             case "PAYMENT_ERROR":
                 return NextResponse.redirect(
-                    `${process.env.DOMAIN}/user/payment/failure`,
+                    `${process.env.DOMAIN}/user/profile/payment/failure`,
                     {
                         status: 301,
                     }
@@ -60,7 +62,7 @@ export async function POST(req) {
                     await referrer.save();
                 }
                 return NextResponse.redirect(
-                    `${process.env.DOMAIN}/user/payment/success?transactionId=${confirmationId}`,
+                    `${process.env.DOMAIN}/user/profile/payment/success?transactionId=${confirmationId}`,
                     {
                         status: 301,
                     }

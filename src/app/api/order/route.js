@@ -1,7 +1,7 @@
 import connectDB from "@/database/dbConfig";
-import Order from "@/database/models/order";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
+import Order from "@/database/models/order";
 
 export async function GET(req) {
     try {
@@ -23,8 +23,8 @@ export async function GET(req) {
 
         const orders = await Order
             .find()
-            .populate('user', 'firstName lastName email contact referralId')
-            .populate('plan', 'name amount')
+            .populate("user", "firstName lastName email contact referredBy")
+            .populate("plan", "name amount bonus")
             .sort({ createdAt: -1 });
 
         return NextResponse.json({ orders }, { status: 200 });

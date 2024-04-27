@@ -4,12 +4,12 @@ const OrderSchema = new mongoose.Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: "users",
             required: [true, "Please provide an user"],
         },
         plan: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Plan',
+            ref: "plans",
             required: [true, "Please provide a plan"],
         },
         paymentStatus: {
