@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 import crypto from "crypto";
 import Order from "@/database/models/order";
+import jwt from "jsonwebtoken";
+import Plan from "@/database/models/plan";
 
 const generatePhonePePayload = (userId, amount, mobileNumber) => {
     const payload = {
@@ -57,10 +59,16 @@ export async function POST(req) {
         const { amount, plan } = await req.json();
 
         const user = await User.findById(userId);
-
         if (!user) {
             return NextResponse.json({
                 error: "User not found!"
+            }, { status: 404 });
+        }
+
+        const planExists = await Plan.findById(plan);
+        if (!planExists) {
+            return NextResponse.json({
+                error: "Plan not found!"
             }, { status: 404 });
         }
 
@@ -68,7 +76,6 @@ export async function POST(req) {
             user: userId,
             plan: plan,
         });
-
         await newOrder.save();
 
         const phonePePayload = generatePhonePePayload(userId, amount, user.contact);
