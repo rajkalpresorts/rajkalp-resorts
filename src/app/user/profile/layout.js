@@ -30,25 +30,6 @@ function Layout({ children }) {
 		window.location.reload();
 	};
 
-	// useEffect(() => {
-	//   const verifyToken = () => {
-	//     setVerified(false);
-	//     try {
-	//       axios.get("/api/auth/verify-token");
-	//       setVerified(true);
-	//     } catch (error) {
-	//       setVerified(false);
-	//       router.push("/admin/login");
-	//     }
-	//   };
-
-	//   verifyToken();
-	// }, []);
-
-	// if (!verified) {
-	//   return <Loader />;
-	// }
-
 	return (
 		<>
 			<div className={styles.contain}>
