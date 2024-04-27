@@ -49,3 +49,41 @@ export async function GET(req) {
         }, { status: 500 });
     }
 }
+
+export async function PUT(req) {
+    try {
+        await connectDB();
+
+        const userId = req.nextUrl.searchParams.get('userId');
+        if (!userId) {
+            return NextResponse.json({
+                error: "No user ID!"
+            }, { status: 400 });
+        }
+
+        const token = req.cookies.get('token')?.value || null;
+        if (!token) {
+            return NextResponse.json({
+                error: "No access token!"
+            }, { status: 300 });
+        }
+
+        const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+        if (decoded.role !== 'admin') {
+            return NextResponse.json({
+                error: "Unauthorized access!"
+            }, { status: 401 });
+        }
+
+        await User.updateOne({ _id: userId }, { balance: 0 });
+        return NextResponse.json({
+            success: true,
+            message: "User balance has been reset."
+        }, { status: 200 });
+
+    } catch (error) {
+        return NextResponse.json({
+            error: error.message
+        }, { status: 500 });
+    }
+}
