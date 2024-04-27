@@ -24,7 +24,10 @@ export async function GET(req) {
         }
 
         const orders = await Order
-            .find({ user: userId })
+            .find({
+                user: userId,
+                paymentStatus: "PAYMENT_SUCCESS"
+            })
             .select("-checksum -transactionId -merchantId -providerRefID -confirmationId")
             .populate('user', 'firstName lastName email contact referralId')
             .populate('plan', 'name amount')
