@@ -56,7 +56,7 @@ export async function POST(req) {
         }
 
         const userId = decoded.id;
-        const { amount, plan } = await req.json();
+        const { plan } = await req.json();
 
         const user = await User.findById(userId);
         if (!user) {
@@ -71,6 +71,8 @@ export async function POST(req) {
                 error: "Plan not found!"
             }, { status: 404 });
         }
+
+        const amount = planExists.amount;
 
         const newOrder = new Order({
             user: userId,
