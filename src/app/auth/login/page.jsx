@@ -38,7 +38,9 @@ function Login() {
 			setLoading(true);
 			const res = await axios.post("/api/auth/login", formData);
 			dispatch(login(res.data.user));
-			if (res.status === 200) {
+			if (res.status === 200 && res.data.user.role === "admin") {
+				router.push("/admin");
+			} else if (res.status === 200 && res.data.user.role === "user") {
 				router.push("/user");
 			}
 		} catch (error) {

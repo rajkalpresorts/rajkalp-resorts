@@ -48,7 +48,7 @@ function Layout({ children }) {
 					<Link href="/user/profile/payment" className={styles.ribs}>
 						<button
 							className={
-								path === "/user/profile/payment"
+								path.includes("/user/profile/payment")
 									? styles.butActive
 									: styles.ribbonBtn
 							}

@@ -1,0 +1,30 @@
+Order Task manager Type UI
+Side panel for admin
+Order: (Priority)
+  - Name (FN + LN)
+  - Email, Contact no.
+  - Plan (Name & Price)
+  - Payment Status
+  - Payment Time
+  - Amount (PhonePe Amount (In Rs.(/100)))
+User: (Priority)
+  - Name (FN + LN)
+  - Email, Contact no.
+  - DOB
+  - Gender
+  - Adress, City, State
+  - Refferal Id
+  - Balance
+  - Total Earnings
+  - Reset Balance (PUT method, Reset balance to 0 (/api/user?userId=1234))
+Tree: (Priority)
+  - Similar to User for Admin
+Get All Users (GET, (/api/user/all))
+Settle all Balance Button (PUT, (/api/user/all)) (last priority)
+/admin/Order
+/admin/user
+
+Image on Tree and Api call on click
+Success Page
+Profile side panel highlighting on success/failure page
+Restricting User to access Admin Pages

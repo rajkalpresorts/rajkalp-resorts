@@ -46,7 +46,7 @@ export async function POST(req) {
 			);
 		}
 
-		if (decoded.role === "user" && order.user._id !== decoded.id) {
+		if (decoded.role === "user" && order.user._id != decoded.id) {
 			return NextResponse.json(
 				{
 					error: "Unauthorized access!",
