@@ -59,6 +59,7 @@ export async function POST(req) {
                 const referrer = await User.findById(oldOrder.user.referredBy);
                 if (referrer) {
                     referrer.balance += oldOrder.plan.bonus;
+                    referrer.totalEarnings += oldOrder.plan.bonus;
                     await referrer.save();
                 }
                 return NextResponse.redirect(
