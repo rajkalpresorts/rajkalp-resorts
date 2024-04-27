@@ -13,6 +13,10 @@ const PlanSchema = new mongoose.Schema(
             type: Number,
             required: [true, "Please provide an amount"],
         },
+        bonus: {
+            type: Number,
+            required: [true, "Please provide a bonus"],
+        },
     },
     {
         timestamps: true

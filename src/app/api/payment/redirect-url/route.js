@@ -2,6 +2,7 @@ import connectDB from "@/database/dbConfig";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import Order from "@/database/models/order";
+import User from "@/database/models/user";
 
 export async function POST(req) {
     try {
@@ -18,9 +19,12 @@ export async function POST(req) {
         const paymentTime = new Date();
         const confirmationId = crypto.randomBytes(16).toString("hex");
 
-        const oldOrder = await Order.findOne({
-            transactionId: transactionId,
-        });
+        const oldOrder = await Order
+            .findOne({
+                transactionId: transactionId,
+            })
+            .populate("user", "firstName lastName email contact referredBy")
+            .populate("plan", "name amount bonus");
 
         if (!oldOrder) {
             return NextResponse.json(
@@ -50,6 +54,11 @@ export async function POST(req) {
                     }
                 );
             case "PAYMENT_SUCCESS":
+                const referrer = await User.findById(oldOrder.user.referredBy);
+                if (referrer) {
+                    referrer.balance += oldOrder.plan.bonus;
+                    await referrer.save();
+                }
                 return NextResponse.redirect(
                     `${process.env.DOMAIN}/user/payment/success?transactionId=${confirmationId}`,
                     {
