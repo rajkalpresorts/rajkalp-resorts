@@ -6,74 +6,6 @@ import Tree from "react-d3-tree";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const myTreeData = [
-	{
-		name: "CEO",
-		children: [
-			{
-				name: "Manager",
-				attributes: {
-					department: "Production",
-				},
-				children: [
-					{
-						name: "Foreman",
-						attributes: {
-							department: "Fabrication",
-						},
-						children: [
-							{
-								name: "Workers",
-							},
-						],
-					},
-					{
-						name: "Foreman",
-						attributes: {
-							department: "Assembly",
-						},
-						children: [
-							{
-								name: "Workers",
-							},
-						],
-					},
-				],
-			},
-			{
-				name: "Manager",
-				attributes: {
-					department: "Marketing",
-				},
-				children: [
-					{
-						name: "Sales Officer",
-						attributes: {
-							department: "A",
-						},
-						children: [
-							{
-								name: "Salespeople",
-							},
-						],
-					},
-					{
-						name: "Sales Officer",
-						attributes: {
-							department: "B",
-						},
-						children: [
-							{
-								name: "Salespeople",
-							},
-						],
-					},
-				],
-			},
-		],
-	},
-];
-
 const renderForeignObjectNode = ({
 	nodeDatum,
 	toggleNode,
@@ -90,7 +22,20 @@ const renderForeignObjectNode = ({
 					{nodeDatum.name}
 				</div>
 				{nodeDatum.attributes?.email && (
-					<div>Email: {nodeDatum.attributes?.email}</div>
+					<div
+						style={{
+							fontSize: "0.75em",
+						}}
+					>
+						<span
+							style={{
+								fontWeight: "bold",
+							}}
+						>
+							Email:
+						</span>{" "}
+						{nodeDatum.attributes?.email}
+					</div>
 				)}
 			</div>
 		</foreignObject>
@@ -98,8 +43,8 @@ const renderForeignObjectNode = ({
 );
 
 function Page() {
-	const foreignObjectProps = { width: 150, height: 100, x: -75, y: -50 };
-	const [treeData, setTreeData] = useState(myTreeData);
+	const foreignObjectProps = { width: 200, height: 70, x: -100, y: -50 };
+	const [treeData, setTreeData] = useState({ name: "Loading..." });
 	const user = useSelector((data) => data.user.user);
 
 	const gatherData = async () => {
@@ -123,7 +68,7 @@ function Page() {
 
 	return (
 		<div className={styles.container}>
-			<h1>ORG Chart POC</h1>
+			<h1>Referrals Tree</h1>
 			<div id="treeWrapper" style={{ width: "100%", height: "100vh" }}>
 				<Tree
 					data={treeData}

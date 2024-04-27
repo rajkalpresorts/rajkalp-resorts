@@ -21,6 +21,7 @@ const fetchReferrals = async (userId, depth) => {
 			attributes: {
 				email: user.email,
 				referralId: user.referralId,
+				id: user._id,
 			},
 			children: [],
 		};
@@ -37,6 +38,7 @@ const fetchReferrals = async (userId, depth) => {
 		attributes: {
 			email: user.email,
 			referralId: user.referralId,
+			id: user._id,
 		},
 		children: referrals,
 	};
