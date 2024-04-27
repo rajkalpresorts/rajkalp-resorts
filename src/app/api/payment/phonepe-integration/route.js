@@ -72,7 +72,7 @@ export async function POST(req) {
             }, { status: 404 });
         }
 
-        const amount = planExists.amount;
+        const amount = planExists.amount * 100;
 
         const newOrder = new Order({
             user: userId,
