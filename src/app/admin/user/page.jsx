@@ -7,18 +7,21 @@ import TableNav from "@/components/tableNav/TableNav";
 import axios from "axios";
 import Loader from "@/components/loader/Loader";
 import Image from "next/image";
+import ReactModal from "react-modal";
 
 import Empty from "@/../public/assets/rajkalp/empty.png";
+import { set } from "mongoose";
 
 function Page() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [userToSettle, setUserToSettle] = useState(null);
+	const [settleAll, setSettleAll] = useState(false);
 
 	const assembleData = async () => {
 		setLoading(true);
 		try {
 			const res = await axios.get("/api/user/all");
-			console.log(res.data.users);
 			setData(res.data.users);
 		} catch (err) {
 			console.log(err);
@@ -38,6 +41,24 @@ function Page() {
 
 		assembleDataWrapper();
 	}, []);
+
+	const settleUserBalance = async () => {
+		try {
+			const res = await axios.put(`/api/user?userId=${userToSettle}`);
+			assembleData();
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	const settleAllUsers = async () => {
+		try {
+			const res = await axios.put("/api/user/all");
+			assembleData();
+		} catch (err) {
+			console.log(err);
+		}
+	};
 
 	const [expandedUser, setExpandedUser] = useState(null);
 
@@ -67,6 +88,16 @@ function Page() {
 
 	return (
 		<div className="usersList">
+			<div className="queryBox">
+				<button
+					className="query"
+					onClick={() => {
+						setSettleAll(true);
+					}}
+				>
+					Settle All Users Balance
+				</button>
+			</div>
 			<div className="box2">
 				<table>
 					<thead>
@@ -186,13 +217,18 @@ function Page() {
 															<b>Refferal Id: </b>
 															{data?.referralId}
 														</div>
-														{/* <div
+														<div
 															className={
 																styles.delBtn
 															}
+															onClick={() =>
+																setUserToSettle(
+																	data?._id
+																)
+															}
 														>
 															Settle Balance
-														</div> */}
+														</div>
 													</div>
 												</div>
 											</td>
@@ -225,6 +261,61 @@ function Page() {
 					/>
 				</div>
 			)}
+			<ReactModal
+				isOpen={userToSettle || settleAll}
+				onRequestClose={() => {
+					setUserToSettle(null);
+					setSettleAll(false);
+				}}
+				style={{
+					content: {
+						top: "50%",
+						left: "50%",
+						right: "auto",
+						bottom: "auto",
+						marginRight: "-50%",
+						transform: "translate(-50%, -50%)",
+						width: "400px",
+						height: "100px",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+					},
+				}}
+			>
+				<div className={styles.modalWrapper}>
+					<div className={styles.modalText}>
+						{`Are you sure to settle ${
+							settleAll ? "all users" : "user"
+						} balance to 0 ?`}
+					</div>
+					<div className={styles.modalButton}>
+						<div
+							className={styles.confirmDelBtn}
+							onClick={() => {
+								if (settleAll) {
+									settleAllUsers();
+								} else {
+									settleUserBalance();
+								}
+								setUserToSettle(null);
+								setSettleAll(false);
+							}}
+						>
+							Settle
+						</div>
+						<div
+							className={styles.cancelBtn}
+							onClick={() => {
+								setUserToSettle(null);
+								setSettleAll(false);
+							}}
+						>
+							Cancel
+						</div>
+					</div>
+				</div>
+			</ReactModal>
 		</div>
 	);
 }

@@ -6,19 +6,23 @@
 
 	.queryBox {
 		display: flex;
-		align-items: center;
+		justify-content: flex-end;
 		width: 96%;
 		background-color: #fff;
 		border-radius: 0.4rem;
 		box-shadow: 0px 0px 10px 0px #0000001a;
-		padding: 0.4rem 0;
+		padding: 0.4rem 1rem;
 		margin-top: 1rem;
 		gap: 1.5rem;
-		justify-content: center;
 
 		.query {
 			padding: 6px 10px;
 			font-weight: 600;
+			border-radius: 5px;
+			background-color: tomato;
+			color: #fff;
+			border: 1px solid #d1d1d1;
+			cursor: pointer;
 
 			span {
 				font-weight: 400;

@@ -8,12 +8,12 @@ import { logout } from "@/redux/slices/userSlice";
 
 const sidebar = [
 	{
-		name: "Order",
+		name: "Orders",
 		link: "/admin/order",
 		highlight: ["order"],
 	},
 	{
-		name: "User",
+		name: "Users",
 		link: "/admin/user",
 		highlight: ["user"],
 	},
