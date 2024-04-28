@@ -14,5 +14,12 @@
 	justify-content: center;
 	background-color: white;
 	width: 200px;
-	height: 70px;
+	height: 80px;
+}
+
+.reload {
+	color: #2f80ed;
+	margin-top: 10px;
+	text-decoration: underline;
+	cursor: pointer;
 }

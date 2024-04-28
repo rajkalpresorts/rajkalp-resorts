@@ -27,7 +27,7 @@ function Page() {
 		};
 
 		gatherDataWrapper();
-	}, []);
+	}, [rootId]);
 
 	return (
 		<Tree treeData={treeData} setRootId={setRootId} mainRoot={user.id} />

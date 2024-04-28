@@ -28,8 +28,6 @@ function failure() {
 		getPaymentDetails();
 	}, [transactionId]);
 
-	console.log(paymentDetails);
-
 	return (
 		<section className={styles.container}>
 			<div className={styles.statusBox}>
